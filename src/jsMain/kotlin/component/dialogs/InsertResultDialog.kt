@@ -105,7 +105,7 @@ val insertResultDialog = fc<InsertResultDialogProps> {  props ->
                     onClick = {
                         props.submitForm(Match(
                             props.match.opponent,
-                            props.match.played,
+                            true,
                             madeGoalsValue,
                             concededGoalsValue,
                             props.match.home,

@@ -18,6 +18,7 @@ suspend fun getMatchList(): List<Match> {
     return jsonClient.get(endpoint + Match.path)
 }
 
+
 suspend fun addMatch(match: Match) {
     jsonClient.post<Unit>(endpoint + Match.path) {
         contentType(ContentType.Application.Json)
@@ -72,7 +73,7 @@ suspend fun deletePlayer(player: Player) {
 }
 
 suspend fun updatePlayer(matchPlayerStat: MatchPlayerStatistics) {
-    jsonClient.post<Unit>(endpoint+Player.path+"/${matchPlayerStat.playerId}") {
+    jsonClient.post<Unit>(endpoint+Player.path+"/update") {
         contentType(ContentType.Application.Json)
         body = matchPlayerStat
     }

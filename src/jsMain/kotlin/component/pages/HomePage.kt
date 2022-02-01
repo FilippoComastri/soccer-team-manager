@@ -76,7 +76,6 @@ val home = fc<Props> {
                 isOpenTrainDialog = isopenTrainingDialog
                 closeForm = { isopenTrainingDialog=false }
                 submitFormAddingTraining = { training ->
-                    console.log("id ${traininglist.last().id}")
                     scope.launch {
                         addTraining(training)
                         traininglist = getTrainingList()
@@ -91,7 +90,6 @@ val home = fc<Props> {
                 isOpenDialog = isopenMatchDialog
                 closeForm = { isopenMatchDialog=false }
                 submitFormAddingMatch = { match ->
-                    console.log("id match ${matchlist.last().id}")
                     scope.launch {
                         addMatch(match)
                         matchlist = getMatchList()

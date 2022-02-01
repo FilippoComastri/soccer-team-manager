@@ -9,7 +9,7 @@ import mui.material.Box
 import mui.material.ListItem
 import mui.material.List
 import react.Props
-import react.dom.html.ReactHTML
+
 import react.fc
 
 external interface TrainingListProps : Props {

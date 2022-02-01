@@ -94,9 +94,20 @@ val rowCollapsible = fc<RowProps> { props ->
                 attrs {
                     `in` = open
                     timeout = "auto"
+                    sx = jso {
+                        flexGrow = FlexGrow(1.0)
+                        maxWidth = 700.px
+                        maxHeight = 400.px
+                        margin = 1.px
+                    }
                 }
                 Box {
-                    attrs.sx = jso { margin = 1.px }
+                    attrs.sx = jso {
+                        flexGrow = FlexGrow(1.0)
+                        maxWidth = 700.px
+                        maxHeight = 400.px
+                        margin = 1.px
+                    }
                     Typography {
                         attrs {
                             variant = "h6"
@@ -114,7 +125,7 @@ val rowCollapsible = fc<RowProps> { props ->
                                     }
                                     +"Opponent"
                                 }
-                                mui.material.TableCell {
+                                TableCell {
                                     attrs {
                                         align = TableCellAlign.right
                                     }
@@ -131,7 +142,7 @@ val rowCollapsible = fc<RowProps> { props ->
                                         }
                                         +"${m.opponent}"
                                     }
-                                    mui.material.TableCell {
+                                    TableCell {
                                         attrs {
                                             align = TableCellAlign.right
                                         }

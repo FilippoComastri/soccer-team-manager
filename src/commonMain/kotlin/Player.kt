@@ -6,25 +6,29 @@ data class Player(
     val name: String ,
     val surname: String,
     val roles: List<String>,
-    var madeGoals: Int, //
-    var concededGoals: Int, //
-    var playedMins: Int, //
-    var playedMatches: Int, //
+    var madeGoals: Int,
+    var concededGoals: Int,
+    var playedMins: Int,
+    var playedMatches: Int,
     var averageVote: Double,
     val nationality: String,
     val dateOfBirth: String,
     val marketvalue: Int,
     val characteristics: String,
-    var yellowCards: Int,//
-    var redCards: Int, //
+    var yellowCards: Int,
+    var redCards: Int,
     var diffidato: Boolean,
     var squalificato: Boolean,
     var totVote: Int,
     var matches: MutableList<Match>
 )
 {
-    val id: Int = surname.hashCode()
+    val id: Int = (name+surname).hashCode()
     companion object {
         const val path = "/playerLists"
+        fun getAverageVote(average: Double, vote: Double, tot: Int): Double {
+            println("average $average , vote $vote , tot $tot")
+            return average+vote/tot
+        }
     }
 }
