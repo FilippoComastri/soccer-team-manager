@@ -1,7 +1,7 @@
 @file:JsModule("react-soccer-lineup")
 @file:JsNonModule
 
-package component
+package component.Lineup
 
 import react.ComponentClass
 import react.Props

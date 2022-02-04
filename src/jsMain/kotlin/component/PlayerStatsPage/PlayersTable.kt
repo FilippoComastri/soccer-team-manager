@@ -1,4 +1,4 @@
-package component
+package component.PlayerStatsPage
 
 import Player
 import csstype.FlexGrow
@@ -13,6 +13,7 @@ import react.dom.aria.ariaLabel
 external interface PlayersTableProps : Props {
     var players : List<Player>
     var onSelectPlayer : (Player) -> Unit
+    var deleteplayer : (Player) -> Unit
 }
 
 val playersTable = fc<PlayersTableProps> { props ->
@@ -93,6 +94,7 @@ val playersTable = fc<PlayersTableProps> { props ->
                             attrs {
                                 player = p
                                 onClickPlayer = props.onSelectPlayer
+                                onDelete = { props.deleteplayer(p) }
                             }
                         }
                     }

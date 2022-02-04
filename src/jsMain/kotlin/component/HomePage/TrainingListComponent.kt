@@ -1,6 +1,5 @@
-package component
+package component.HomePage
 
-import Match
 import Training
 import csstype.FlexGrow
 import csstype.px
@@ -14,6 +13,7 @@ import react.fc
 
 external interface TrainingListProps : Props {
     var trainings: List<Training>
+    var onDelete : (Training) -> Unit
 }
 
 val trainingList = fc<TrainingListProps> { props ->
@@ -32,6 +32,7 @@ val trainingList = fc<TrainingListProps> { props ->
                     child(trainingView) {
                         attrs {
                             training = t
+                            deleteTraining = { props.onDelete(t) }
                         }
                     }
                 }

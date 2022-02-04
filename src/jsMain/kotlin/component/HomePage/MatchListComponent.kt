@@ -1,4 +1,4 @@
-package component
+package component.HomePage
 
 import Match
 import component.dialogs.insertResultDialog
@@ -13,6 +13,7 @@ import csstype.px
 import react.useState
 
 external interface MatchListProps : Props {
+    var onDelete: (Match)-> Unit
     var updatematch: (Match) -> Unit
     var matches: List<Match>
     var myteam: String
@@ -30,7 +31,7 @@ val matchList = fc<MatchListProps> { props ->
 
         }
         List {
-            for (m in props.matches) {
+            props.matches.sortedByDescending(Match :: dayHour).forEach { m ->
                 ListItem {
                     child(matchView) {
                         attrs {
@@ -40,6 +41,7 @@ val matchList = fc<MatchListProps> { props ->
                                 selectedMatch = m
                                 isOpenChangeDialog = true
                             }
+                            deleteMatch = { props.onDelete(m) }
                         }
                     }
                 }

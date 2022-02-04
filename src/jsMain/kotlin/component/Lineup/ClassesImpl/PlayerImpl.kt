@@ -1,6 +1,6 @@
-package component.ClassesImpl
+package component.Lineup.ClassesImpl
 
-import component.Player
+import component.Lineup.Player
 
 data class PlayerImpl(
     override var color: String,

@@ -1,19 +1,20 @@
-package component
+package component.HomePage
 
-import Match
 import Training
 import csstype.*
 import kotlinext.js.jso
-import mui.material.Card
-import mui.material.CardContent
+import kotlinx.css.title
+import mui.icons.material.DeleteForever
+import mui.material.*
 import react.Props
+import react.ReactNode
 import react.dom.html.ReactHTML
+import react.dom.sub
 import react.fc
-import mui.material.Typography
-import mui.material.TypographyAlign
 
 external interface TrainingProps : Props {
     var training: Training
+    var deleteTraining: () -> Unit
 }
 
 val trainingView = fc<TrainingProps> { props ->
@@ -21,21 +22,18 @@ val trainingView = fc<TrainingProps> { props ->
         attrs {
             sx = jso {
                 width = 100.pct
-                maxHeight = 100.px
+                maxHeight = 180.px
                 backgroundColor = Color("LightGreen")
                 color = Color("Black")
             }
         }
-        CardContent {
-            Typography {
-                attrs {
-                    gutterBottom = true
-                    align = TypographyAlign.left
-                    variant = "body1"
-                    component = ReactHTML.div
-                }
-                + "Focus : ${props.training.focus} - ${props.training.dayHour}"
+        CardHeader {
+            attrs {
+                title= ReactNode("${props.training.focus}")
+                subheader = ReactNode("${props.training.dayHour}")
             }
+        }
+        CardContent {
             Typography {
                 attrs {
                     gutterBottom = true
@@ -44,6 +42,14 @@ val trainingView = fc<TrainingProps> { props ->
                     component = ReactHTML.div
                 }
                 + "${props.training.descrizione}"
+            }
+            IconButton {
+                attrs {
+                    onClick = {
+                        props.deleteTraining()
+                    }
+                }
+                DeleteForever()
             }
         }
     }

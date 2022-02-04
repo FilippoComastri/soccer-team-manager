@@ -1,7 +1,6 @@
 package component.dialogs
 
 import Match
-import component.pages.home
 import csstype.*
 import kotlinext.js.jso
 import mui.material.*

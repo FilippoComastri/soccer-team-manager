@@ -1,7 +1,7 @@
-package component.ClassesImpl
+package component.Lineup.ClassesImpl
 
-import component.Player
-import component.Squad
+import component.Lineup.Player
+import component.Lineup.Squad
 
 data class SquadImpl(
     override var gk: Player,
@@ -10,7 +10,7 @@ data class SquadImpl(
     override var cm: Array<Player>,
     override var cam: Array<Player>,
     override var fw: Array<Player>
-):Squad {
+): Squad {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || this::class.js != other::class.js) return false

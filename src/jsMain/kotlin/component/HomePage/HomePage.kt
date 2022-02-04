@@ -1,19 +1,19 @@
-package component.pages
+package component.HomePage
 
 import Match
 import Training
 import addMatch
 import addTraining
-import component.*
 import component.dialogs.matchDialog
 import component.dialogs.trainingDialog
 import csstype.*
+import deleteMatch
+import deleteTraining
 import kotlinext.js.jso
 import kotlinx.coroutines.MainScope
 import getMatchList
 import getTrainingList
 import kotlinx.coroutines.launch
-import kotlinx.css.s
 import mui.material.*
 import react.*
 import updateMatch
@@ -64,11 +64,23 @@ val home = fc<Props> {
                         matchlist = getMatchList()
                     }
                 }
+                onDelete = { match ->
+                    scope.launch {
+                        deleteMatch(match)
+                        matchlist = getMatchList()
+                    }
+                }
             }
         }
         child(trainingList){
             attrs {
                 trainings = traininglist
+                onDelete = { training ->
+                    scope.launch {
+                        deleteTraining(training)
+                        traininglist = getTrainingList()
+                    }
+                }
             }
         }
         child(trainingDialog) {
@@ -88,7 +100,7 @@ val home = fc<Props> {
         child(matchDialog) {
             attrs {
                 isOpenDialog = isopenMatchDialog
-                closeForm = { isopenMatchDialog=false }
+                closeForm = { isopenMatchDialog = false }
                 submitFormAddingMatch = { match ->
                     scope.launch {
                         addMatch(match)

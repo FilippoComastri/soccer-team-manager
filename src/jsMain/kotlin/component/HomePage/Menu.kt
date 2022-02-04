@@ -1,4 +1,4 @@
-package component.pages
+package component.HomePage
 
 import csstype.*
 import kotlinext.js.jso

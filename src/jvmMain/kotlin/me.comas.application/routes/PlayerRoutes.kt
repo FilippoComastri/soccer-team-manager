@@ -42,7 +42,6 @@ fun Route.deletePlayer() {
 
 fun Route.updatePlayerRoute() {
     post(Player.path+"/update") {
-        println("-------UPDATE----------")
         val matchPerformance = call.receive<MatchPlayerStatistics>()
         var player = players.find().toList().first { it.id == matchPerformance.playerId }
         player.playedMins+=matchPerformance.playedMins

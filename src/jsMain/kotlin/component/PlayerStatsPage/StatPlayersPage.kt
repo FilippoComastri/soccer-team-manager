@@ -1,24 +1,20 @@
-package component.pages
+package component.PlayerStatsPage
 
 import Match
 import Player
 import addPlayer
-import addTraining
-import component.cardPlayer
 import component.dialogs.insertPlayerDialog
 import component.dialogs.playerStatDialog
-import component.playersTable
 import csstype.*
+import deletePlayer
 import getMatchList
 import getPlayers
-import getTrainingList
 import kotlinext.js.jso
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import mui.icons.material.AddRounded
 import mui.material.*
 import mui.system.ResponsiveStyleValue
-import mui.system.Spacing
 import react.*
 import updatePlayer
 
@@ -58,6 +54,12 @@ val statPlayer = fc<Props> {
                 attrs {
                     onSelectPlayer = { player -> currentPlayer = player }
                     players = playerss
+                    deleteplayer = { player ->
+                        MainScope().launch {
+                            deletePlayer(player)
+                            playerss=getPlayers()
+                        }
+                    }
                 }
             }
             Stack {

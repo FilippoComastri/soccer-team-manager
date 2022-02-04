@@ -3,7 +3,6 @@ package component.dialogs
 import Match
 import MatchPlayerStatistics
 import Player
-import component.pages.home
 import csstype.*
 import kotlinext.js.jso
 import kotlinx.browser.document

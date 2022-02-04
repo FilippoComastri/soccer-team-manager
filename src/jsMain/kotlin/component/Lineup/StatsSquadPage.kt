@@ -1,4 +1,4 @@
-package component.pages
+package component.Lineup
 
 import mui.material.Card
 import mui.material.CardContent

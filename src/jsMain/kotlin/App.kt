@@ -1,8 +1,9 @@
-import component.pages.*
+import component.HomePage.home
+import component.Lineup.statSquad
+import component.PlayerStatsPage.statPlayer
+import component.appBar
 import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 import react.*
-import react.dom.html.Capture
 import react.router.Routes
 import react.router.Route
 import react.router.dom.BrowserRouter

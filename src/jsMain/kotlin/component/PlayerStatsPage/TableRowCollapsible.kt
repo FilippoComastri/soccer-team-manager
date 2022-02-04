@@ -1,8 +1,9 @@
-package component
+package component.PlayerStatsPage
 
 import Player
 import csstype.*
 import kotlinext.js.jso
+import mui.icons.material.DeleteForever
 import mui.material.*
 import mui.material.Size
 import react.Props
@@ -17,6 +18,7 @@ import react.useState
 external interface RowProps : Props {
     var player : Player
     var onClickPlayer: (Player) -> Unit
+    var onDelete: () -> Unit
 }
 
 val rowCollapsible = fc<RowProps> { props ->
@@ -79,6 +81,15 @@ val rowCollapsible = fc<RowProps> { props ->
                 align = TableCellAlign.right
             }
             +"${props.player.marketvalue}"
+        }
+        TableCell {
+            IconButton {
+                attrs {
+                    size = Size.small
+                    onClick = { props.onDelete() }
+                }
+                DeleteForever()
+            }
         }
     }
     TableRow {
