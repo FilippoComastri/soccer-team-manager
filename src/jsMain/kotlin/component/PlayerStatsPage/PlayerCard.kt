@@ -28,7 +28,7 @@ val cardPlayer = fc<CardPlayerProps> { props ->
                 sx = jso {
                     display =Display.block
                     width = 100.pct
-                    backgroundColor = Color("AliceBlue")
+                    backgroundColor = Color("LightGreen")
                     color = Color("Black")
                 }
             }

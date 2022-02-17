@@ -3,6 +3,9 @@ package component
 import kotlinext.js.jso
 import csstype.Color
 import csstype.TextDecoration
+import kotlinx.coroutines.NonCancellable.isActive
+
+import kotlinx.css.style
 import mui.material.*
 import mui.material.styles.Theme
 import mui.material.styles.ThemeOptions
@@ -17,14 +20,16 @@ val appBar = fc<Props> {
         AppBar {
             attrs {
                 position = AppBarPosition.static
-                color = AppBarColor.primary
+                style = jso {
+                    backgroundColor = Color("#20b02c")
+                }
             }
             Toolbar {
                 NavLink {
                     attrs {
                         to = "/"
                         style = jso {
-                            textDecoration = TextDecoration.none
+                            textDecoration = TextDecoration.solid
                             color = Color("White")
                         }
                     }
@@ -36,7 +41,7 @@ val appBar = fc<Props> {
                     attrs {
                         to = "/statsPlayers"
                         style = jso {
-                            textDecoration = TextDecoration.none
+                            textDecoration = TextDecoration.solid
                             color = Color("White")
                         }
                     }
@@ -48,12 +53,12 @@ val appBar = fc<Props> {
                     attrs {
                         to = "/statSquad"
                         style = jso {
-                            textDecoration = TextDecoration.none
+                            textDecoration = TextDecoration.solid
                             color = Color("White")
                         }
                     }
                     ListItemButton {
-                        +"Stats Squad"
+                        +"Lineup"
                     }
                 }
 

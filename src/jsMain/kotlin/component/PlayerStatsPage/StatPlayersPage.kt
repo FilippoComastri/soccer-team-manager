@@ -74,6 +74,10 @@ val statPlayer = fc<Props> {
                 }
                 Button {
                     attrs {
+                        style = jso() {
+                            color = Color("#20b02c")
+                            borderColor = Color("#20b02c")
+                        }
                         variant = ButtonVariant.outlined
                         onClick = { isOpenInsertPlayerDialog=true }
                     }
@@ -82,6 +86,10 @@ val statPlayer = fc<Props> {
                 }
                 Button {
                     attrs {
+                        style = jso() {
+                            color = Color("#20b02c")
+                            borderColor = Color("#20b02c")
+                        }
                         variant = ButtonVariant.outlined
                         onClick = { isOpenStatDialog=true }
                     }

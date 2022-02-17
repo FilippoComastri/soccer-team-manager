@@ -3,13 +3,11 @@ package component.HomePage
 import Training
 import csstype.*
 import kotlinext.js.jso
-import kotlinx.css.title
 import mui.icons.material.DeleteForever
 import mui.material.*
 import react.Props
 import react.ReactNode
 import react.dom.html.ReactHTML
-import react.dom.sub
 import react.fc
 
 external interface TrainingProps : Props {
@@ -45,6 +43,10 @@ val trainingView = fc<TrainingProps> { props ->
             }
             IconButton {
                 attrs {
+                    style = jso {
+                        color = Color("#f2072e")
+                        borderColor = Color("#f2072e")
+                    }
                     onClick = {
                         props.deleteTraining()
                     }

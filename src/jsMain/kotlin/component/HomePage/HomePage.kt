@@ -40,6 +40,7 @@ val home = fc<Props> {
         attrs {
             sx = jso {
                 display = Display.flex
+                height = 800.px
                 flexWrap = FlexWrap.nowrap
             }
         }

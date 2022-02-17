@@ -1,6 +1,7 @@
 package component.HomePage
 
 import Match
+import component.lineup.*
 import csstype.*
 import react.*
 import mui.material.*
@@ -29,8 +30,8 @@ val matchView = fc<MatchProps> { props ->
                     display =Display.block
                     width = 100.pct
                     maxHeight=180.px
-                    backgroundColor = Color("AliceBlue")
-                    color = Color("Black")
+                    backgroundColor = Color("#20b02c")
+                    color = Color("White")
                 }
             }
             CardHeader {
@@ -46,6 +47,9 @@ val matchView = fc<MatchProps> { props ->
             }
             CardContent {
                 IconButton {
+                        attrs.sx = jso {
+                            color = Color("White")
+                        }
                         attrs.onClick = {
                             props.openChangeDialog()
                         }
@@ -53,6 +57,10 @@ val matchView = fc<MatchProps> { props ->
                     }
                 IconButton {
                         attrs {
+                            style = jso {
+                                color = Color("#f2072e")
+                                borderColor = Color("#f2072e")
+                            }
                             onClick = {
                                 props.deleteMatch()
                             }
@@ -63,62 +71,4 @@ val matchView = fc<MatchProps> { props ->
 
         }
     }
-    /*Card {
-        attrs {
-            sx = jso {
-                width = 100.pct
-                height = 100.px
-                backgroundColor = Color("AliceBlue")
-                color = Color("Black")
-            }
-        }
-        Box {
-            attrs {
-                sx = jso {
-                    display = Display.tableColumn
-                    flexWrap = FlexWrap.nowrap
-                }
-            }
-            CardContent {
-                attrs {
-                    sx = jso {
-                        display = Display.block
-                        flexGrow = FlexGrow(5.0)
-                    }
-                }
-                Typography {
-                    attrs {
-                        gutterBottom = true
-                        align = TypographyAlign.center
-                        variant = "body4"
-                        component = ReactHTML.div
-                        sx = jso {
-                            display = Display.inlineBlock
-                        }
-                    }
-                    +"${props.match.dayHour}"
-                }
-                Typography {
-                    attrs {
-                        gutterBottom = true
-                        align = TypographyAlign.center
-                        variant = "subtitle1"
-                        component=ReactHTML.div
-                        sx = jso {
-                            display= Display.inlineBlock
-                        }
-                    }
-                    when {
-                        props.match.home && props.match.played-> + "${props.myTeam}  ${props.match.madeGoals} : ${props.match.concededGoals}    ${props.match.opponent}"
-                        !props.match.home && props.match.played-> + "${props.match.opponent}  ${props.match.concededGoals} :  ${props.match.madeGoals}  ${props.myTeam} "
-                        props.match.home && !props.match.played -> + "${props.myTeam} vs ${props.match.opponent}  "
-                        !props.match.home && !props.match.played -> + "${props.match.opponent} vs ${props.myTeam} "
-                    }
-
-                }
-
-            }
-
-        }
-    }*/
 }

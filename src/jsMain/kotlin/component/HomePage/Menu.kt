@@ -20,7 +20,6 @@ val menu = fc<MenuProps> { props ->
             sx = jso {
                 marginTop = 2.px
                 flexGrow = FlexGrow(1.0)
-                //width = 200.px
                 borderColor = Color("Red")
                 alignItems = AlignItems.center
             }
@@ -41,6 +40,10 @@ val menu = fc<MenuProps> { props ->
                 attrs {
                     variant = ButtonVariant.outlined
                     onClick =  { props.openMatchDialog() }
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
+                    }
                 }
                 +"Add Match"
                 AddRounded()
@@ -49,6 +52,10 @@ val menu = fc<MenuProps> { props ->
                 attrs {
                     variant = ButtonVariant.outlined
                     onClick =  { props.openTrainingDialog() }
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
+                    }
                 }
                 +"Add Training"
                 AddRounded()

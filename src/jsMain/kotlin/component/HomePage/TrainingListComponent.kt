@@ -4,10 +4,9 @@ import Training
 import csstype.FlexGrow
 import csstype.px
 import kotlinext.js.jso
-import mui.material.Box
-import mui.material.ListItem
-import mui.material.List
+import mui.material.*
 import react.Props
+import react.dom.html.ReactHTML
 
 import react.fc
 
@@ -25,7 +24,17 @@ val trainingList = fc<TrainingListProps> { props ->
             }
 
         }
-
+        Typography {
+            attrs {
+                sx = jso {
+                    marginTop = 10.px
+                }
+                align = TypographyAlign.center
+                variant = "h4"
+                component = ReactHTML.div
+            }
+            +"Trainings"
+        }
         List {
             for (t in props.trainings) {
                 ListItem {

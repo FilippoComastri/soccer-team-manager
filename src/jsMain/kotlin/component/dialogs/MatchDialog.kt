@@ -145,12 +145,20 @@ val matchDialog = fc<MatchDialogProps> { props ->
         DialogActions {
             Button {
                 attrs {
+                    style = jso() {
+                        color = Color("#f2072e")
+                        borderColor = Color("#20b02c")
+                    }
                     onClick = { props.closeForm() }
                 }
                 +"Cancel"
             }
             Button {
                 attrs {
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
+                    }
                     onClick = {
                         props.submitFormAddingMatch(
                             Match(

@@ -1,5 +1,5 @@
 import component.HomePage.home
-import component.Lineup.statSquad
+import component.lineup.statSquad
 import component.PlayerStatsPage.statPlayer
 import component.appBar
 import kotlinx.coroutines.MainScope

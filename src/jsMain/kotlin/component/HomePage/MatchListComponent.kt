@@ -6,10 +6,9 @@ import csstype.FlexGrow
 import kotlinext.js.jso
 import react.Props
 import react.fc
-import mui.material.List
-import mui.material.ListItem
-import mui.material.Box
 import csstype.px
+import mui.material.*
+import react.dom.html.ReactHTML
 import react.useState
 
 external interface MatchListProps : Props {
@@ -29,6 +28,17 @@ val matchList = fc<MatchListProps> { props ->
                 flexGrow = FlexGrow(5.0)
             }
 
+        }
+        Typography {
+            attrs {
+                sx = jso {
+                    marginTop = 10.px
+                }
+                align = TypographyAlign.center
+                variant = "h4"
+                component = ReactHTML.div
+            }
+            +"Matches"
         }
         List {
             props.matches.sortedByDescending(Match :: dayHour).forEach { m ->

@@ -3,6 +3,7 @@ package component.PlayerStatsPage
 import Player
 import csstype.*
 import kotlinext.js.jso
+import kotlinx.html.SMALL
 import mui.icons.material.DeleteForever
 import mui.material.*
 import mui.material.Size
@@ -33,7 +34,6 @@ val rowCollapsible = fc<RowProps> { props ->
         TableCell {
             IconButton {
                 attrs {
-                    ariaLabel = "expand row"
                     size = Size.small
                     onClick = { open = !open }
                 }
@@ -99,23 +99,17 @@ val rowCollapsible = fc<RowProps> { props ->
                     paddingBottom = 0.px
                     paddingTop = 0.px
                 }
-                colSpan = 2
+                colSpan = 7
             }
             Collapse {
                 attrs {
                     `in` = open
                     timeout = "auto"
-                    sx = jso {
-                        flexGrow = FlexGrow(1.0)
-                        maxWidth = 700.px
-                        maxHeight = 400.px
-                        margin = 1.px
-                    }
                 }
                 Box {
                     attrs.sx = jso {
                         flexGrow = FlexGrow(1.0)
-                        maxWidth = 700.px
+                        maxWidth = 650.px
                         maxHeight = 400.px
                         margin = 1.px
                     }
@@ -128,17 +122,18 @@ val rowCollapsible = fc<RowProps> { props ->
                         +"Players' matches"
                     }
                     Table {
+                        attrs.size = Size.small
                         TableHead {
                             TableRow {
                                 TableCell {
                                     attrs {
-                                        align = TableCellAlign.right
+                                        align = TableCellAlign.center
                                     }
                                     +"Opponent"
                                 }
                                 TableCell {
                                     attrs {
-                                        align = TableCellAlign.right
+                                        align = TableCellAlign.center
                                     }
                                     +"Date"
                                 }
@@ -149,13 +144,13 @@ val rowCollapsible = fc<RowProps> { props ->
                                 TableRow {
                                     TableCell {
                                         attrs {
-                                            align = TableCellAlign.right
+                                            align = TableCellAlign.center
                                         }
                                         +"${m.opponent}"
                                     }
                                     TableCell {
                                         attrs {
-                                            align = TableCellAlign.right
+                                            align = TableCellAlign.center
                                         }
                                         +"${m.dayHour}"
                                     }

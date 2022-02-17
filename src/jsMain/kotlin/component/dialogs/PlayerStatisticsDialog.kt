@@ -30,13 +30,10 @@ val playerStatDialog= fc<playerStatDialogProps> {   props ->
 
     var madeGoals by useState(-1)
     var concededGoals by useState(-1)
-    var matchId by useState(-1)
     var playedMins by useState(-1)
     var vote by useState(-1.1)
     var yellowCards by useState(-1)
     var redCard by useState(-1)
-    var selectedMatch: Match? by useState(null)
-    var selectedPlayer: Player? by useState(null)
 
     Dialog {
         attrs {
@@ -211,12 +208,20 @@ val playerStatDialog= fc<playerStatDialogProps> {   props ->
         DialogActions {
             Button {
                 attrs {
+                    style = jso() {
+                        color = Color("#f2072e")
+                        borderColor = Color("#20b02c")
+                    }
                     onClick = { props.closeForm() }
                 }
                 +"Cancel"
             }
             Button {
                 attrs {
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
+                    }
                     onClick = {
                         props.submitForm(
                             MatchPlayerStatistics(

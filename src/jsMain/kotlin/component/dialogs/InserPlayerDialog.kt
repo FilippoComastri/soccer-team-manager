@@ -175,11 +175,19 @@ val insertPlayerDialog = fc<InserPlayerDialogProps> {   props ->
             Button {
                 attrs {
                     onClick = { props.closeForm() }
+                    style = jso() {
+                        color = Color("#f2072e")
+                        borderColor = Color("#f2072e")
+                    }
                 }
                 +"Cancel"
             }
             Button {
                 attrs {
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
+                    }
                     onClick = {
                         val rolesList = rolesValue.split(",")
                         props.submitForm(Player(

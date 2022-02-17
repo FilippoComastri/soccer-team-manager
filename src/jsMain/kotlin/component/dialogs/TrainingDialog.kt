@@ -2,6 +2,7 @@ package component.dialogs
 
 import Training
 import csstype.AlignItems
+import csstype.Color
 import csstype.JustifyContent
 import kotlinext.js.jso
 import mui.material.*
@@ -79,6 +80,10 @@ val trainingDialog = fc<TrainingDialogProps> { props ->
             Button {
                 attrs {
                     onClick = { props.closeForm() }
+                    style = jso() {
+                        color = Color("#f2072e")
+                        borderColor = Color("#f2072e")
+                    }
                 }
                 +"Cancel"
             }
@@ -86,6 +91,10 @@ val trainingDialog = fc<TrainingDialogProps> { props ->
                 attrs {
                     onClick = {
                         props.submitFormAddingTraining(Training(dateValue,focusValue,descValue))
+                    }
+                    style = jso() {
+                        color = Color("#20b02c")
+                        borderColor = Color("#20b02c")
                     }
                 }
                 +"Submit"
