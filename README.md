@@ -2,48 +2,39 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
 ### General Info
 ***
-Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
-### Screenshot
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+Full-stack web application written in Kotlin. It's an example of how Kotlin Multiplatform can be used to develop a full-stack application which uses different platforms.
+This project is developed during an university's project work and it can be used as an example to develop an application using Kotlin Multiplatform.
+
 ## Technologies
 ***
 A list of technologies used within the project:
-* [Technologie name](https://example.com): Version 12.3 
-* [Technologie name](https://example.com): Version 2.34
-* [Library name](https://example.com): Version 1234
+* [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html)
+* [kotlin-react-legacy](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-react-legacy)
+* [kotlin-react-router-dom](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-react-router-dom)
+* [kotlin-mui](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-mui)
+* [kotlin-mui-icons](https://github.com/JetBrains/kotlin-wrappers/tree/master/kotlin-mui-icons)
+* [Ktor](https://ktor.io/)
+* [Kmongo](https://litote.org/kmongo/)
 ## Installation
 ***
-A little intro about the installation.
+You have to install MongoDB on your local machine. To set up MongoDB Community Edition on your local development machine, please refer to the [tutorials](https://docs.mongodb.com/manual/installation/#mongodb-community-edition-installation-tutorials) on the official MongoDB website for your respective operating system.
+Check to have a JVM running on your local machine.
+Then you are ready to install this project
+
+Windows
 ```
-$ git clone https://example.com
+$ git clone https://github.com/FilippoComastri/soccer-team-manager.git
 $ cd ../path/to/the/file
-$ npm install
-$ npm start
+$ gradlew.bat build 
+$ gradlew.bat run 
 ```
-Side information: To use the application in a special environment use ```lorem ipsum``` to start
-## Collaboration
-***
-Give instructions on how to collaborate with your project.
-> Maybe you want to write a quote in this part. 
-> It should go over several rows?
-> This is how you do it.
-## FAQs
-***
-A list of frequently asked questions
-1. **This is a question in bold**
-Answer of the first question with _italic words_. 
-2. __Second question in bold__ 
-To answer this question we use an unordered list:
-* First point
-* Second Point
-* Third point
-3. **Third question in bold**
-Answer of the third question with *italic words*.
-4. **Fourth question in bold**
-| Headline 1 in the tablehead | Headline 2 in the tablehead | Headline 3 in the tablehead |
-|:--------------|:-------------:|--------------:|
-| text-align left | text-align center | text-align right |
+Linux/Mac
+```
+$ git clone https://github.com/FilippoComastri/soccer-team-manager.git
+$ cd ../path/to/the/file
+$ ./gradlew build 
+$ ./gradlew run 
+```
+
